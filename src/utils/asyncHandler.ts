@@ -4,7 +4,10 @@ import type {
   RequestHandler,
   Response,
 } from "express";
-import type { ParamsDictionary, Query } from "express-serve-static-core";
+import type {
+  ParamsDictionary,
+  Query,
+} from "express-serve-static-core";
 
 export const asyncHandler = <
   P extends ParamsDictionary = ParamsDictionary,

@@ -1,16 +1,25 @@
 import { validate } from "@/middlewares/validate.middleware";
 import { Router } from "express";
-import { createExampleSchema, deleteExampleSchema, getExampleByIdSchema, updateExampleSchema } from "./example.schema";
+import {
+  createExampleSchema,
+  deleteExampleSchema,
+  getExampleByIdSchema,
+  updateExampleSchema,
+} from "./example.schema";
 import { asyncHandler } from "@/utils/asyncHandler";
 import { ExampleService } from "./example.service";
 import { ExampleRepository } from "./example.repository";
 import { ExampleController } from "./example.controller";
 
-export const exampleRouter = Router()
+export const exampleRouter = Router();
 
-const exampleRepository = new ExampleRepository()
-const exampleService = new ExampleService(exampleRepository)
-const exampleController = new ExampleController(exampleService)
+const exampleRepository = new ExampleRepository();
+const exampleService = new ExampleService(
+  exampleRepository,
+);
+const exampleController = new ExampleController(
+  exampleService,
+);
 
 /**
  * @openapi
@@ -52,8 +61,8 @@ exampleRouter.get(
 exampleRouter.get(
   "/:id",
   validate(getExampleByIdSchema),
-  asyncHandler(exampleController.getExampleById)
-)
+  asyncHandler(exampleController.getExampleById),
+);
 
 /**
  * @openapi

@@ -6,7 +6,8 @@ export const swaggerSpec = swaggerJSDoc({
     info: {
       title: "Express TypeScript API",
       version: "1.0.0",
-      description: "API documentation for Express.js TypeScript template",
+      description:
+        "API documentation for Express.js TypeScript template",
     },
     servers: [
       {
@@ -32,7 +33,8 @@ export const swaggerSpec = swaggerJSDoc({
             id: {
               type: "string",
               format: "uuid",
-              example: "550e8400-e29b-41d4-a716-446655440000",
+              example:
+                "550e8400-e29b-41d4-a716-446655440000",
             },
             name: {
               type: "string",
